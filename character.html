@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>꿈꾸는 동화::Dreaming Story</title>
+    <!--나중에 favicon 제작 후 넣기-->
+    <!-- 필요시 js
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script> -->
+    <!--css-->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/background.css">
+    <!-- <link rel="stylesheet" href="css/mob.css"> -->
+</head>
+<body>
+<!--배경-->
+<div class="backSky">
+  <svg class="sky"></svg>
+</div>
+
+
+    <div id="top">
+        <div class="logo"><a href="index.html"><img src="img/dreaming story logo.png" alt="logo" style="width: 100%;"></a></div>    
+    </div>
+    <!--menu-->
+    <ul class="gnb">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="story.html">Story</a></li>
+      <li style="font-weight: bold;"><a href="character.html">Character</a></li>
+      <li><a href="#">Memo</a></li>
+    </ul>
+
+    <!--banner-->
+    <!-- <div class="banner1">
+
+    </div> -->
+
+
+    <!-- mini_character-->
+    <div class="character_wrap">
+        <ul class="mini_character">
+            <li><a href="character_01.html"><img src="img/mini_arika.png" alt=""><div class="name_bg"><p>아리카</p></div></a></li>
+            <li><a href="character_02.html"><img src="img/mini_neri.png" alt=""><div class="name_bg"><p>네리</p></div></a></li>
+            <li><a href="character_03.html"><img src="img/mini_lee_hwa.png" alt=""><div class="name_bg"><p>이 화</p></div></a></li>
+            <li><a href="character_04.html"><img src="img/mini_seon_yul.png" alt=""><div class="name_bg"><p>선 율</p></div></a></li>
+            <li><a href="character_05.html"><img src="img/mini_seo_iin.png" alt=""><div class="name_bg"><p>서이인</p></div></a></li>
+            <li><a href="character_06.html"><img src="img/mini_iyze.png" alt=""><div class="name_bg"><p>아이즈</p></div></a></li>
+            <li><a href="character_07.html"><img src="img/mini_cheon_sol.png" alt=""><div class="name_bg"><p>천 솔</p></div></a></li>
+            <li><a href="character_08.html"><img src="img/mini_moca.png" alt=""><div class="name_bg"><p>모카</p></div></a></li>
+            <li><a href="character_09.html"><img src="img/mini_monika.png" alt=""><div class="name_bg"><p>모니카</p></div></a></li>
+            <li><a href="character_10.html"><img src="img/mini_arous.png" alt=""><div class="name_bg"><p>아루스</p></div></a></li>
+          </ul>
+    </div>
+
+
+  <div id="footer_wrap">
+    <div class="footer">
+      <div class="footer_text1">
+        <p>Twitter :: @Tal_Sack</p>
+        <p>COPYRIGHT ⓒ 2013 DreamingStory All Rights Reserved.</p>  
+    </div>
+    </div>
+    
+  </div>
+</body>
+<script> //클릭 방지
+    $(document).on('click', 'a[href="#"]', function(e){
+        e.preventDefault();
+    });
+
+    $('.post-wrapper').slick({
+  slidesToShow: 3,
+  slidesToScroll: 1,
+  autoplay: true,
+  autoplaySpeed: 2000,
+  nextArrow:$('.next'),
+  prevArrow:$('.prev'),
+});
+
+- 새로고침
+
+$('.aaa').slick('init');
+</script>
+
+<script>
+const $sky = document.querySelector(".sky");
+
+// 브라우저 창 크기에 따른 별 생성
+window.onresize = () => {
+  makeStars();
+}
+
+const makeStars = () => {
+  // 브라우저 가장 큰 크기
+  const maxSize = Math.max(window.innerWidth, window.innerHeight)
+
+  // 랜덤한 X 위치 값
+  const getRandomX = () => Math.random() * maxSize;
+
+  // 랜덤한 Y 위치 값
+  const getRandomY = () => Math.random() * maxSize;
+
+  // 랜덤한 크기 (circle는 반지름이 크기)
+  const randomRadius = () =>  Math.random() * 0.7 + 0.6;
+  
+  // 임의의 값
+  const _size = Math.floor(maxSize / 2);
+  
+  const htmlDummy = new Array(_size).fill().map((_, i) => {
+    return  `<circle class='star'
+        cx=${getRandomX()}
+        cy=${getRandomY()}
+        r=${randomRadius()}
+        className="star" />`
+  }).join('');
+  
+  $sky.innerHTML = htmlDummy;
+}
+
+window.onload = () => {
+  makeStars();
+}
+</script>
+
+
+
+
+</html>

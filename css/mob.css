@@ -1,0 +1,79 @@
+@charset "UTF-8";/*꼭 넣기*/
+@font-face {
+    font-family: 'HakgyoansimWoojuR';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2307-2@1.0/HakgyoansimWoojuR.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+*{margin: 0; padding: 0;
+    -ms-overflow-style: none;
+  }
+ul,ol{list-style: none;}
+body{
+    font-family: "GmarketSansMedium";
+    font-size: 12px;
+    line-height: 22px;
+    color: #161514;
+    background-color:  #0A0E1B;
+    height: 100%;
+}
+a{color: #161514; text-decoration: none;}
+@media screen and (max-width: 3680) {
+    .character_box{
+        width: 80%;
+    }
+}
+@media screen and (max-width:1400px) {
+  /*main banner*/
+.main_banner{
+  width: 80%;
+  height: 500px;
+  background-image: url(/img/main_banner1.png);
+  z-index: 99;
+  border-radius: 16px;
+  margin: 20 auto;
+}
+.main_banner img{
+  width: 100%;
+  vertical-align: middle;
+}
+
+        }
+
+@media screen and (max-width: 1100px){
+    #top .logo{
+        display: block;
+        margin: 20px auto;
+        float: none;
+    }
+}
+@media screen and (max-width: 570px){
+  .gnb{
+    width: 100%;
+    font-size: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    top: auto;
+    left: auto;
+    z-index: 99;
+}
+.gnb>li{
+    margin: 24px;
+    padding-inline: 4%;
+    flex: none;
+}
+.banner2_text{
+  margin: 0 auto;
+  padding: 8%;
+  font-size: 1.4rem;
+}
+.banner2_text h1{
+  padding-bottom: 32px;
+}
+.banner2_text p{
+  padding-bottom: 16px;
+}
+}
+

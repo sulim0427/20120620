@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>꿈꾸는 동화::Dreaming Story</title>
+    <!--나중에 favicon 제작 후 넣기-->
+    <!-- 필요시 js
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script> -->
+    <!--css-->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/background.css">
+    <link rel="stylesheet" href="css/mob.css">
+</head>
+<body>
+
+
+    <div id="top">
+        <div class="logo"><a href="index.html"><img src="img/dreaming story logo.png" alt="logo" style="width: 100%;"></a></div>    
+    </div>
+    <!--menu-->
+    <ul class="gnb">
+      <li><a href="index.html">Home</a></li>
+      <li style="font-weight: bold;"><a href="story.html">Story</a></li>
+      <li><a href="character.html">Character</a></li>
+      <li><a href="#">Memo</a></li>
+    </ul>
+
+    <!--banner-->
+    <div class="banner2_container">
+        <div class="banner2">
+            <div class="banner2_text">
+                <h1> '동화'는 어떤 곳일까요? </h1>
+                <br><br>
+                <p>평범한 사람들은 상상하기 힘들지도 모릅니다.</p>
+                <p>그곳은 온전한 '언섀터'들만의 공간이니깐요.</p><br><br>
+                <p>언섀터가 아닌 사람들에게 동화라는 곳을 설명하기에는 복잡합니다.</p>
+                <p>복잡하게 얽힌 세상은 현대나 동화나 다름없을까요? </p>
+                <p>어쩌면 복잡한 건 똑같을 수도 있겠네요.</p><br><br>
+                <p>누구나 그렇듯 우리 모두는 평화로운 세상을 원합니다. </p><br><br>
+                <p>각자의 가치관의 충돌로 인하여 일그러진 관계를 다시 회복할 수 있을까요?</p>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <!--mini_character-->
+    <!-- <ul class="mini_character">
+      <li><a href="#"><img src="img/mini_arika.png" alt=""></a></li>
+      <li><a href="#"><img src="img/mini_neri.png" alt=""></a></li>
+      <li><a href="#"><img src="img/mini_lee_hwa.png" alt=""></a></li>
+      <li><a href="#"><img src="img/mini_seon_yul.png" alt=""></a></li>
+      <li><a href="#"><img src="img/mini_seo_iin.png" alt=""></a></li>
+      <li><a href="#"><img src="img/mini_iyze.png" alt=""></a></li>
+      <li><a href="#"><img src="img/mini_cheon_sol.png" alt=""></a></li>
+      <li><a href="#"><img src="img/mini_moca.png" alt=""></a></li>
+      <li><a href="#"><img src="img/mini_monika.png" alt=""></a></li>
+      <li><a href="#"><img src="img/mini_arous.png" alt=""></a></li>
+    </ul> -->
+
+  <div id="footer_wrap">
+    <div class="footer">
+      <div class="footer_text1">
+        <p>Twitter :: @Tal_Sack</p>
+        <p>COPYRIGHT ⓒ 2013 DreamingStory All Rights Reserved.</p>  
+    </div>
+    </div>
+    
+  </div>
+  <!--배경-->
+<div class="backSky">
+    <svg class="sky"></svg>
+  </div>
+</body>
+<script> //클릭 방지
+    $(document).on('click', 'a[href="#"]', function(e){
+        e.preventDefault();
+    });
+
+    $('.post-wrapper').slick({
+  slidesToShow: 3,
+  slidesToScroll: 1,
+  autoplay: true,
+  autoplaySpeed: 2000,
+  nextArrow:$('.next'),
+  prevArrow:$('.prev'),
+});
+
+- 새로고침
+
+$('.aaa').slick('init');
+</script>
+
+<script>
+const $sky = document.querySelector(".sky");
+
+// 브라우저 창 크기에 따른 별 생성
+window.onresize = () => {
+  makeStars();
+}
+
+const makeStars = () => {
+  // 브라우저 가장 큰 크기
+  const maxSize = Math.max(window.innerWidth, window.innerHeight)
+
+  // 랜덤한 X 위치 값
+  const getRandomX = () => Math.random() * maxSize;
+
+  // 랜덤한 Y 위치 값
+  const getRandomY = () => Math.random() * maxSize;
+
+  // 랜덤한 크기 (circle는 반지름이 크기)
+  const randomRadius = () =>  Math.random() * 0.7 + 0.6;
+  
+  // 임의의 값
+  const _size = Math.floor(maxSize / 2);
+  
+  const htmlDummy = new Array(_size).fill().map((_, i) => {
+    return  `<circle class='star'
+        cx=${getRandomX()}
+        cy=${getRandomY()}
+        r=${randomRadius()}
+        className="star" />`
+  }).join('');
+  
+  $sky.innerHTML = htmlDummy;
+}
+
+window.onload = () => {
+  makeStars();
+}
+</script>
+
+
+
+
+</html>
