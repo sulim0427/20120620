@@ -119,7 +119,7 @@ a{color: #161514; text-decoration: none;}
     -webkit-filter: blur(5px);
     width: 90%;
     height: 760px;
-    background-image:url('/img/20240204_01.png');
+    background-image:url('../img/20240204_01.png');
     background-position: 20% 22%;
   }
 .banner2_text{
